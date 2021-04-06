@@ -15,3 +15,10 @@ this.orbitType = orbitType;
 this.operational = operational;
 }
 }
+function shouldShowWarning () {
+if(satellite.type.value.toLowerCase() === 'Space Debris'){    
+    return true
+   } else {
+    return false
+   }
+}
