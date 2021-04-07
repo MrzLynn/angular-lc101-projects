@@ -11,10 +11,13 @@ export class AppComponent {
 
   sourceList: Satellite[];
   displayList: Satellite[];
+
   constructor() {
+   
     this.sourceList = [];
+    this.displayList = [];
     let satellitesUrl = 'https://handlers.education.launchcode.org/static/satellites.json';
-    let displayList = [];
+    
     window.fetch(satellitesUrl).then(function(response) {
        response.json().then(function(data) {
  
