@@ -1,4 +1,4 @@
-import { type } from "os";
+import { type } from 'os';
 
 export class Satellite {
 name: string;
@@ -14,11 +14,12 @@ this.launchDate = launchDate;
 this.orbitType = orbitType;
 this.operational = operational;
 }
-}
-function shouldShowWarning () {
-if(satellite.type.value.toLowerCase() === 'Space Debris'){    
+
+shouldShowWarning () {
+if(this.type.toLowerCase() === 'space debris'){    
     return true
    } else {
     return false
    }
+}
 }

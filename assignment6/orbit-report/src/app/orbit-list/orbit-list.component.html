@@ -1,22 +1,20 @@
 <h3>Orbit Report</h3>
 <table>
    <tr class="header-row">
-      <th class="sortable">Name</th>
-      <ol [style.color]= "alternateColor" [type] = "Type">
-      <th class="sortable">Type</th>
-      </ol>
+      <th class="sortable" (click)="sort('name')">Name</th>
+      <th class="sortable" (click)="sort('type')">Type</th>      
       <th>Operational</th>
       <th>Orbit Type</th>
       <th>Launch Date</th>
    </tr>
-   <ol [class.ol-style]="changeColor">
+   
  <tr *ngFor="let satellite of satellites">
-    <td (click)="sort('name')">{{satellite.name}}</td>  <!--dot notation to show satellite properties-->
-    <td (click)="sort('type')">{{satellite.type}}</td>
+    <td>{{satellite.name}}</td>  
+    <td [class.warning]="satellite.shouldShowWarning()">{{satellite.type}}</td>
     <td>{{satellite.operational}}</td>
     <td>{{satellite.orbitType}}</td>
     <td>{{satellite.launchDate}}</td> 
- </ol>   
+    
  </tr> 
 </table>
-<app-orbit-list [satellites]="displayList"></app-orbit-list>
+
